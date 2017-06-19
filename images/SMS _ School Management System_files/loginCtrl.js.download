@@ -1,0 +1,67 @@
+(function () {
+    'use strict';
+
+    angular.module('sms').controller('loginCtrl',loginCtrl);
+
+        loginCtrl.$inject = ['$location', '$rootScope',/*'AuthenticationService', 'FlashService',*/'UserService'];
+
+    function loginCtrl($location,$rootScope,/*AuthenticationService*/UserService) {
+        var vm = this;
+        /*$rootScope.merchant = {};*/
+
+        /*vm.merchant = {};*/
+
+        vm.login = login;
+
+        /*(function initController() {
+            // reset login status
+            AuthenticationService.ClearCredentials();
+        })();
+*/
+        function login() {
+            console.log(vm.user);
+            
+            /*vm.dataLoading = true;
+
+            AuthenticationService.Login(vm.mobileno, vm.password)
+              .success(function(res) {
+*/
+                /*AuthenticationService.SetCredentials(vm.mobileno, vm.password);
+
+                console.log(res.data.data.mobilenumber);
+                console.log(res.data.data.password);
+
+                $rootScope.merchant = res.data.data;
+
+                console.log($rootScope.merchant);*/
+                
+                // console.log(res.data.data);
+                // console.log(vm.password);
+
+                // AuthenticationService.SetCredentials(res.data.data,vm.password);
+
+                
+                /*vm.merchant = res.data.Details;*/
+                /*$rootScope.merchant= res.data.Details;
+                console.log($rootScope.merchant.businessname);*/
+                              
+                /*FlashService.Success('LoggedIn successful', true);
+                $location.path('/dashboard/promotions');
+              })
+              .error(function(err) {
+                console.log(err);
+                FlashService.Error(err.data.message);
+                vm.dataLoading = false;
+              });*/
+              UserService.Login(vm.user).then(function (response) {
+                 console.log(response);
+                 if (status = = 200) {
+                    $location.path("dashboard");
+                 }
+                 
+             });
+
+        };
+    }
+
+})();

@@ -1,0 +1,273 @@
+(function () {
+    'use strict';
+
+angular.module('sms', ['ngResource', 'ngMessages', 'ui.router','ngCookies']).config(config).run(run);
+
+config.$inject = ['$stateProvider', '$urlRouterProvider','$locationProvider'];
+function config($stateProvider, $urlRouterProvider,$locationProvider) {
+
+
+$locationProvider.html5Mode(true);
+$urlRouterProvider.otherwise('/');
+
+$stateProvider
+.state('home',{
+    url: '/',
+    views: {
+        '': {
+          templateUrl: 'views/home.html'
+        },
+        'header@home':{
+          templateUrl:'layouts/header.html'
+        },
+        'nav@home': {
+          templateUrl: 'layouts/nav.html'
+        },
+        'body@home': {
+          templateUrl: 'views/partials/home.template.html'
+        },
+        'footer@home': {
+          templateUrl: 'layouts/footer.html'
+        }
+    }
+})
+.state('about',{
+    url: '/about',
+    views: {
+        '': {
+          templateUrl: 'views/home.html'
+        },
+        'header@about':{
+          templateUrl:'layouts/header.html'
+        },
+        'nav@about': {
+          templateUrl: 'layouts/nav.html'
+        },
+        'body@about': {
+          templateUrl: 'views/partials/about.template.html',
+          controller:'abtCtrl'
+        },
+        'footer@about': {
+          templateUrl: 'layouts/footer.html'
+        }
+    }
+})
+.state('contact',{
+    url: '/contact',
+    views: {
+        '': {
+          templateUrl: 'views/home.html'
+        },
+        'header@contact':{
+          templateUrl:'layouts/header.html'
+        },
+        'nav@contact': {
+          templateUrl: 'layouts/nav.html'
+        },
+        'body@contact': {
+          templateUrl: 'views/partials/contact.template.html',
+          controller:'contactCtrl'
+        },
+        'footer@contact': {
+          templateUrl: 'layouts/footer.html'
+        }
+    }
+})
+.state('login',{
+    url: '/login',
+    views: {
+        '': {
+          templateUrl: 'views/home.html'
+        },
+        'header@login':{
+          templateUrl:'layouts/header.html'
+        },
+
+        'nav@login': {
+          templateUrl: 'layouts/nav.html'
+        },
+        'body@login': {
+          templateUrl: 'views/partials/login.template.html',
+          controller:'loginCtrl',
+          controllerAs:'vm'
+    },
+        'footer@login': {
+          templateUrl: 'layouts/footer.html'
+        }
+    }
+})
+
+.state('signup',{
+    url: '/signup',
+    views: {
+        '': {
+          templateUrl: 'views/home.html'
+        },
+        'header@signup':{
+          templateUrl:'layouts/header.html'
+        },
+        'nav@signup': {
+          templateUrl: 'layouts/nav.html'
+        },
+        'body@signup': {
+          templateUrl: 'views/partials/register.template.html',
+          controller:'signupCtrl',
+          controllerAs:'vm'
+        },
+        'footer@signup': {
+          templateUrl: 'layouts/footer.html'
+        }
+    }
+})
+.state('dashboard',{
+    url: '/dashboard',
+    views: {
+        '': {
+          templateUrl: 'views/dashboard.html'
+        },
+       
+        'nav@dashboard': {
+          templateUrl: 'layouts/dashnav.html'
+        },
+        'sidebar@dashboard':{
+          templateUrl:'layouts/sidebar.html'
+        },
+        'body@dashboard': {
+          templateUrl: 'views/partials/dashboard.template.html',
+          controller:'DashboardController',
+          controllerAs:'vm'
+        }
+        /*'footer@dashboard': {
+          templateUrl: 'layouts/footer.html'
+        }*/
+    }
+})
+.state('classes',{
+    url: '/classes',
+    views: {
+        '': {
+          templateUrl: 'views/dashboard.html'
+        },
+        
+        'nav@classes': {
+          templateUrl: 'layouts/dashnav.html'
+        },
+        'sidebar@classes':{
+          templateUrl:'layouts/sidebar.html'
+        },
+        'body@classes': {
+          templateUrl: 'views/partials/classes.template.html',
+          controller:'classesCtrl',
+          controllerAs:'vm'
+        }
+        /*'footer@dashboard': {
+          templateUrl: 'layouts/footer.html'
+        }*/
+    }
+})
+.state('createclass',{
+    url: '/createclass',
+    views: {
+        '': {
+          templateUrl: 'views/dashboard.html'
+        },
+       
+        'nav@createclass': {
+          templateUrl: 'layouts/dashnav.html'
+        },
+        'sidebar@createclass':{
+          templateUrl:'layouts/sidebar.html'
+        },
+        'body@createclass': {
+          templateUrl: 'views/partials/createclass.template.html',
+          controller:'createclassCtrl',
+          controllerAs:'vm'
+        }
+        /*'footer@dashboard': {
+          templateUrl: 'layouts/footer.html'
+        }*/
+    }
+})
+.state('vieweditclass',{
+    url: '/vieweditclass',
+    views: {
+        '': {
+          templateUrl: 'views/dashboard.html'
+        },
+       
+        'nav@vieweditclass': {
+          templateUrl: 'layouts/dashnav.html'
+        },
+        'sidebar@vieweditclass':{
+          templateUrl:'layouts/sidebar.html'
+        },
+        'body@vieweditclass': {
+          templateUrl: 'views/partials/viewclass.template.html',
+          controller:'createclassCtrl',
+          controllerAs:'vm'
+        }
+        /*'footer@dashboard': {
+          templateUrl: 'layouts/footer.html'
+        }*/
+    }
+})
+.state('allschools',{
+    url: '/allschools',
+    views: {
+        '': {
+          templateUrl: 'views/dashboard.html'
+        },
+       
+        'nav@allschools': {
+          templateUrl: 'layouts/dashnav.html'
+        },
+        'sidebar@allschools':{
+          templateUrl:'layouts/sidebar.html'
+        },
+        'body@allschools': {
+          templateUrl: 'views/partials/schools.template.html',
+          controller:'schoolCtrl',
+          controllerAs:'vm'
+        }
+        /*'footer@dashboard': {
+          templateUrl: 'layouts/footer.html'
+        }*/
+    }
+});
+
+
+
+
+
+}
+
+
+ run.$inject = ['$rootScope', '$location', '$cookies', '$http'];
+
+function run($rootScope, $location, $cookies, $http) {
+       
+        $rootScope.globals = $cookies.getObject('globals') || {};
+
+
+        if ($rootScope.globals.currentUser) {
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
+        }        
+
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            var restrictedPage = $.inArray($location.path(), ['/login','/signup','/about','/contact','/dashboard','/classes','/createclass','/vieweditclass','/allschools']) === -1;
+           
+           
+            var loggedIn = $rootScope.globals.currentUser;
+            
+            if (restrictedPage && !loggedIn) {
+                $location.path('/');
+            }
+        });
+    }
+
+
+})();
+
+
+
+    

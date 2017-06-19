@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://localhost:8085/createclass -->
+<html lang="en" ng-app="sms" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <!--<base href="/">--><base href=".">
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMS | School Management System</title>
+
+    
+    <link rel="stylesheet" type="text/css" href="./SMS _ School Management System_files/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./SMS _ School Management System_files/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="./SMS _ School Management System_files/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./SMS _ School Management System_files/animate.css">
+
+    <link rel="stylesheet" type="text/css" href="./SMS _ School Management System_files/main.css">
+</head>
+
+<body cz-shortcut-listen="true">
+ 
+ <div class="full-width-container reset-margin reset-padding" id="fill-width-id">
+    <!-- uiView: --><div ui-view="" class="ng-scope"><!-- uiView: nav --><div ui-view="nav" class="ng-scope">
+<div class="dash-nav ng-scope">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-sm-12">
+                        <nav class="dashnavbar">
+                            <div class="container">
+                                
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#linkpages">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <!-- <a class="navbar-brand" href="#"> -->
+                                    <img src="./SMS _ School Management System_files/index.png">
+
+                                    
+                                      
+                                    
+                                </div>
+                                
+                                <div class="collapse navbar-collapse" id="linkpages">
+                                    
+                                
+                                <ul class="dashnav nav navbar-nav navbar-right">
+                                <li>
+					                			
+					                			<a href="http://localhost:8085/home">
+				                        			<i class="fa fa-sign-out fa-1x" aria-hidden="true">LOGOUT</i>
+			                        			</a>
+                                    
+                                </li>  
+
+				                    			
+                    			</ul>
+                                    
+                                      
+                                    
+                                </div>
+                            </div>
+                          </nav>
+                      </div>
+                  </div>
+              </div>
+</div></div>
+<div class="container-fluid reset-padding reset-margin ng-scope">
+	<div class="col-md-2 reset-padding reset-margin">
+		<!-- uiView: sidebar --><div ui-view="sidebar" class="ng-scope">   <div class="sidebar ng-scope">
+          <ul class=" sidelist nav nav-sidebar">
+          
+          <li class=""><a href="http://localhost:8085/dashboard">Dashboard</a></li>
+            <li><a href="http://localhost:8085/classes">Classes</a></li>
+            <li><a href="http://localhost:8085/#">Teachers</a></li>
+            <li><a href="http://localhost:8085/#">Students</a></li>
+            <li><a href="http://localhost:8085/allschools">all schools</a></li>
+          </ul>
+    </div>
+</div>
+	</div>
+	<div class="col-md-10">
+		<!-- uiView: body --><div ui-view="body" class="ng-scope"><div class="breadcrumbbar ng-scope">
+  <ol class="breadcrumb breadbar">
+    <li><a href="http://localhost:8085/classes">classes</a></li>
+    <li><a href="http://localhost:8085/vieweditclass">viewclass</a></li>
+           
+  </ol>
+</div>
+
+<div class="ng-scope">
+	  <div class="col-lg-10 classheading
+	  text-left">
+      <h2>Create class</h2>
+    </div>
+	<div class="panel panel-info col-md-6 col-md-offset-3 createclasspanel">
+		<div class="panel-heading">
+          <div class="panel-title"></div>
+           </div>       
+    
+    <div class="panel-body">
+		<form class="form-horizantal ng-pristine ng-valid" name="form" ng-submit="addRow()">
+			
+				<div class="col-md-12&gt;
+					&lt;div class=" leftside-form"="">
+						<div class="row">
+							<div class="col-md-4">
+								<label for="class">Class</label>
+							</div>
+							<div class="col-md-8">
+							<input type="text" class="form-control ng-pristine ng-untouched ng-valid" name="class" placeholder="class*" ng-model="" ng-pattern="" required=""><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="class">Section</label>
+							</div>
+							<div class="col-md-8">
+							<input type="text" class="form-control ng-pristine ng-untouched ng-valid" name="class" placeholder="section*" ng-model="" ng-pattern="" required=""><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="class">number of students</label>
+							</div>
+							<div class="col-md-8">
+							<input type="text" class="form-control ng-pristine ng-untouched ng-valid" name="class" placeholder="no of students*" ng-model="" ng-pattern="" required=""><br>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="class">syllabus</label>
+							</div>
+							<div clas="col-md-8">
+							
+						        <label class="checkbox-inline">
+						            <input type="checkbox" name="syllabus" ng-model="" class="ng-pristine ng-untouched ng-valid">State
+						        </label>
+						        <label class="checkbox-inline">
+						            <input type="checkbox" name="syllabus" ng-model="" class="ng-pristine ng-untouched ng-valid"> CBSE
+						        </label>
+						        <label class="checkbox-inline">
+						            <input type="checkbox" name="syllabus" ng-model="" class="ng-pristine ng-untouched ng-valid"> ICSE
+						        </label>
+					        </div><br>
+						</div>
+						</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 text-center">
+						<button id="btn-reset" type="reset" class="btn btn-info button"> Reset</button>
+                                  
+	                    <button id="btn-Register" type="submit" name="submit" class="btn btn-info button"> 
+	                     Submit</button>
+                                 
+					</div>
+				</div>
+					</form></div>
+				
+				
+				<!-- <div class="col-md-6">
+					<div class="rightside-form">
+						<div class="row">
+							
+							<div class="col-md-4">
+								<label for="class" control-label>Subjects</label>
+							</div>
+							<div class="col-md-8">
+							<select id="subjectlist" multiple="multiple">
+		
+									<optgroup label="labs">
+										<option value="1">sub1</option>
+										<option value="2">sub2</option>
+										<option value="3">sub3</option>
+										<option value="4">sub4</option>
+										<option value="5">sub5</option>
+										<option value="6">sub6</option>
+									
+										
+									</optgroup>
+									 
+
+								</select>
+							</div>
+						</div><br>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="section">Labs</label>
+							</div>
+							<div class="col-md-8">
+							<select id="labslist" multiple="multiple">
+									<optgroup label="labs">
+										<option value="1">physics</option>
+										<option value="2">chemistry</option>
+										<option value="3">biology</option>
+										<option value="4">computers</option>
+										
+									
+										
+									</optgroup>
+								</select>
+							</div>
+						</div><br>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="class">Test</label>
+							</div>
+							<div class="col-md-8">
+							<select id="testlist" multiple="multiple">
+									<optgroup label="test">
+										<option value="1">unit test1</option>
+										<option value="2">unit test2</option>
+										<option value="3">unit test3</option>
+										<option value="4">unit test4</option>
+										
+									
+										
+									</optgroup>
+								</select>
+							</div>
+						</div>
+					
+					</div>
+				</div>
+ -->				
+	
+	
+	</div>
+	</div>
+	
+	
+	
+
+
+
+
+<script class="ng-scope">
+$('#subjectlist').multiselect({enableClickbleOptGroups:true});
+$('#labslist').multiselect({enableClickbleOptGroups:true});
+$('#testlist').multiselect({enableClickbleOptGroups:true});
+
+</script>
+
+
+</div>
+	</div>
+</div>
+</div>
+ </div>
+
+
+<script type="text/javascript" src="./SMS _ School Management System_files/jquery-3.1.1.min.js.download"></script>
+<script type="text/javascript" src="./SMS _ School Management System_files/bootstrap.min.js.download"></script>
+
+<script type="text/javascript" src="./SMS _ School Management System_files/angular.min.js.download"></script>
+<script type="text/javascript" src="./SMS _ School Management System_files/angular-messages.js.download"></script>
+<script type="text/javascript" src="./SMS _ School Management System_files/angular-resource.js.download"></script>
+<script type="text/javascript" src="./SMS _ School Management System_files/angular-ui-router.js.download"></script>
+<!-- <script src="vendor/angular-route.min.js"></script> -->
+<script type="text/javascript" src="./SMS _ School Management System_files/angular-cookies.min.js.download"></script>
+<script src="./SMS _ School Management System_files/bootstrap-multiselect.js.download"></script>
+<script src="./SMS _ School Management System_files/bootstrap-multiselect.css"></script>
+
+
+
+<script type="text/javascript" src="./SMS _ School Management System_files/app.js.download"></script>
+<script type="text/javascript" src="./SMS _ School Management System_files/signupCtrl.js.download"></script>
+<script type="text/javascript" src="./SMS _ School Management System_files/schoolCtrl.js.download"></script>
+<script type="text/javascript" src="./SMS _ School Management System_files/loginCtrl.js.download"></script>
+
+<!-- <script type="text/javascript" src="controllers/navbarCtrl.js"></script>
+<script type="text/javascript" src="controllers/loginCtrl.js"></script>
+<script type="text/javascript" src="controllers/consumerRegiCtrl.js"></script>
+<script type="text/javascript" src="controllers/signupCtrl.js"></script>
+<script type="text/javascript" src="controllers/dashboardCtrl.js"></script>
+<script src="directives/passwordvalidator.directive.js"></script>
+<script type="text/javascript" src="factories/promiseFactory.js"></script> -->
+
+
+<script type="text/javascript" src="./SMS _ School Management System_files/user.service.js.download"></script>
+
+<!-- 
+<script type="text/javascript" src="services/authentication.service.js"></script>
+<script type="text/javascript" src="services/user.service.js"></script>
+<script type="text/javascript" src="services/flash.service.js"></script> -->
+
+
+
+</body></html>
