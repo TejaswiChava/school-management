@@ -1,0 +1,158 @@
+<!-- <div class="breadcrumbbar">
+  <ol class="breadcrumb breadbar">
+    <li><a href="/classes">classes</a></li>
+    <li><a href="/vieweditclass">viewclass</a></li>
+           
+  </ol>
+</div>
+ -->
+<div class="" >
+	  <div class="col-lg-10 classheading
+	  text-left">
+      <h2>Create class</h2>
+    </div>
+	<div class="panel panel-info  createclasspanel col-lg-6 col-lg-offset-3" >
+		<div class="panel-heading  ">
+          <div class="panel-title"></div>
+           </div>       
+    
+    <div class="panel-body">
+		<form class="form-horizantal" name="CreateClassForm">
+			
+				<div class="col-md-12>
+					<div class="leftside-form">
+						<div class="row">
+							<div class="col-md-4">
+								<label for="class">Class</label>
+							</div>
+							<div class="col-md-8">
+							<input type="text" class="form-control" name="ClassName" placeholder="class*" ng-model="vm.newclass.classname" ng-pattern="/[0-9\s]$/" required>
+                            <span style="color:blue" ng-show="CreateClassForm.ClassName.$touched && CreateClassForm.ClassName.$invalid">invalid classname</span>
+						</div>
+						</div><br>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="class">passing year</label>
+							</div>
+							<div class="col-md-8">
+							<input type="text" class="form-control" name="passingyear" placeholder="yyyy" ng-model="vm.newclass.academicyear" ng-pattern="/^[0-9]{4}$/" required>
+							<span style="color:blue" ng-show="CreateClassForm.passingyear.$touched && CreateClassForm.passingyear.$invalid">invalid year</span>
+							</div>
+						</div><br>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="class">Section</label>
+							</div>
+							<div class="col-md-8">
+							<input type="text" class="form-control" name="sectionname" placeholder="section*" ng-model="vm.newclass.sectionname" ng-pattern="/[aA-zZ\s]$/" required>
+								<span style="color:blue" ng-show="CreateClassForm.section.$touched && CreateClassForm.section.$invalid">invalid sectionname</span>
+							
+							</div>
+						</div><br>
+						
+						<!-- <div class="row">
+							<div class="col-md-4">
+								<label for="class">number of students</label>
+							</div>
+							<div class="col-md-8">
+							<input type="text" class="form-control" name="class" placeholder="no of students*" ng-model="vm.newclass.noofstudents" ng-pattern="/[aA0-zZ9\s]$/" required>
+							</div>
+						</div><br> -->
+
+						
+						<!-- <div class="row">
+							<div class="col-md-6">
+							 <div class="createclass">
+      							<a data-toggle="modal" href="#addteacher" ng-click="vm.setClass()">Add Teacher</a>
+    						</div>
+							
+							</div>
+							
+						</div><br> -->
+						<div class="row">
+							<div class="col-md-4">
+								<label>Teacher</label>
+							</div>
+							<div class="col-md-8">
+								<!-- <select class="form-control form-input" ng-model="vm.newclass.classteachername">
+									<option ng-repeat="teacher in vm.allTeachersdata" value="{{teacher.id}}">{{teacher.fname}}</option>
+								</select> -->
+
+								<input type="text" name="teachername" placeholder="Select/Search" list="teachers" class="form-control form-input" ng-model='vm.newclass.classteachername'>
+            					<datalist id="teachers">
+             						<select style="display: none;" id="_select" name="_select">
+             						<option ng-repeat="teacher in vm.allTeachersdata" value="{{teacher.teachername}}">{{teacher.teachername}}</option>
+             						</select>
+								</datalist>
+								<!--  ng-options='teacher.fname as teacher.id for teacher in vm.allTeachersdata' -->
+
+							</div>
+						</div><br>
+						<div class="row">
+							<div class="col-md-4">
+								<label for="class">syllabus</label>
+							</div>
+							<div clas="col-md-8">
+							
+						        <label>
+						            <input type="radio" name="syllabustype" value="state" ng-model="vm.newclass.syllabustype">State
+						        </label>
+						        <label>
+						            <input type="radio" name="syllabustype" value="cbse" ng-model="vm.newclass.syllabustype" > CBSE
+						        </label>
+						        <label>
+						            <input type="radio" name="syllabustype" value="icse" ng-model="vm.newclass.syllabustype" > ICSE
+						        </label>
+					        </div>
+						</div><br>
+						</div>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 text-center">
+						<button id="btn-reset" type="reset" class="btn btn-info button"> Reset</button>
+                                  
+	                    <button id="btn-Register" type="submit" name="submit" ng-click="vm.createclass()" class="btn btn-info button"> 
+	                     Submit</button>
+                                 
+					</div>
+				</div>
+		</form>
+	</div>
+	</div>
+<!-- <div class="modal fade" id="addteacher" role="dialog">
+	<div class="modal-dialog">
+  		<div class="modal-content">
+    		<div class="modal-header">
+      			<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Add Teacher</h4>
+    		</div>
+    		<div class="modal-body">
+    			<div clas="row">
+    				<div class="col-md-4">
+    					<label>Teacher Name</label>
+    				</div>
+    				<div class="col-md-8">
+    					<select class="form-control form-input" ng-model="vm.newclass.classteachername" ng-options="teacher.fname for teacher in vm.allTeachersdata" >
+						</select>
+						
+						<select class="form-control form-input" ng-model="vm.newclass.classteachername">
+							<option ng-repeat="teacher in vm.allTeachersdata" value="{{teacher.fname}}">{{teacher.fname}}</option>
+						</select>
+
+					</div>
+
+    			</div><br><br>
+    			<div class="row">
+    				<div class="col-lg-6 col-lg-offset-3 text-center">
+    				   <button id="btn-Register" type="submit" name="submit" ng-click="vm.editclass()" class="btn btn-info button">Submit</button>
+                       
+    			</div>
+    		</div>
+		</div>
+	</div>
+</div>
+</div> -->
+</div>
+					
+		
+
+

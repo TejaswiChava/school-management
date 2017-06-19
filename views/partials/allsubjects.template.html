@@ -1,0 +1,67 @@
+<div class="row reset-padding reset-margin">
+	<div class="col-lg-10 text-left">
+		<h3>Subjects</h3>
+	</div>
+	<div class="col-lg-2">
+		<div class="createclass">
+      		<a href="/addsubject">Add Subject</a>
+    	</div>
+	</div>
+</div>
+<div>
+<div class="row classestable reset-padding reset-margin">
+	<div class="col-lg-12">
+	<table class="table table-striped table-bordered">
+      <thead>
+      	<tr>
+      		<th>ID</th>
+      		<th>Subject Name</th>
+      		<th>Edit</th>
+
+      	</tr>
+
+      </thead>
+      <tbody>
+      	<tr ng-repeat="subject in vm.allSubjectsdata">
+      		<td>{{subject.id}}</td>
+      		<td>{{subject.subjectname}}</td>
+      		<td><a data-toggle="modal" href="#editsubject" ng-click="vm.setSubject(subject)"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
+      	</tr>
+      </tbody>
+  	</table>
+	</div>
+</div>
+<div class="modal fade" id="editsubject" role="dialog" name="editsubjectmodal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Edit Subject</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-md-4">
+                <label>subject</label>
+              </div>
+              <div class="col-md-8">
+                <input type="text" class="form-control form-input" name="subjectname" ng-model="vm.subjectDetail.subjectname">
+              </div>
+            </div><br>
+            <div class="row">
+             <div class="col-lg-6 col-lg-offset-3 text-center">
+                <button id="btn-reset" type="reset" class="btn btn-info button"> Reset</button>
+                <button id="btn-Register" type="submit" name="submit" ng-click="vm.editsubject()" class="btn btn-info button">Update</button>
+                                 
+          </div>
+        </div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
+</div>
+
+

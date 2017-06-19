@@ -1,0 +1,125 @@
+<div class="panel panel-info addteacherpanel" >
+	<div class="panel-heading">
+      <div class="panel-title">Add Teacher</div>
+    </div>  
+    <div class="panel-body studentpanel">
+		<form class="form-horizantal" name="addteacherform">
+			<div class="row">
+			<div class="col-md-6">
+				<div class="leftside-form">
+					<div class="row">
+						<div class="col-md-4">
+							<label for="class">Teacher Name</label>
+						</div>
+						<div class="col-md-8">
+							<input type="text" class="form-control" name="teachername" placeholder="Teacher name*" ng-model="vm.teacher.teachername" ng-pattern="/[aA-zZ\s]$/" required>
+                            <span style="color:blue" ng-show="addteacherform.teachername.$touched && addteacherform.teachername.$invalid">only alphabates are allowed</span>
+
+						</div>
+					</div><br>
+					<div class="row">
+                     <div class="col-md-4">
+                        <label>Gender</label>
+                     </div>
+                     <div class="col-md-8">
+                        <label><input type="radio" value="female" name="gender" ng-model="vm.teacher.gender">Female</label>
+                        <label><input type="radio" value="male" name="gender" ng-model="vm.teacher.gender">Male</label>
+
+                     </div>
+                  </div><br>
+                  <div class="row">
+						<div class="col-md-4">
+							<label for="class">Date Of Birth</label>
+						</div>
+						<div class="col-md-8">
+							<input type="text" class="form-control" name="dateofbirth" placeholder="DD/MM/YYYY*" ng-model="vm.teacher.dateofbirth" ng-pattern="/^([0-9]{2}[-/][0-9]{2}[-/][0-9]{4})/" required>
+                            <span style="color:blue" ng-show="addteacherform.dateofbirth.$touched && addteacherform.dateofbirth.$invalid">invalid date format</span>
+
+						</div>
+				</div><br>
+					<div class="row">
+						<div class="col-md-4">
+							<label for="class">Contact Number</label>
+						</div>
+						<div class="col-md-8">
+							<input type="text" class="form-control" name="contactnumber" placeholder="Contact Number*" ng-model="vm.teacher.contactnumber" ng-pattern="/^[0-9]{10,10}$/" required>
+                            <span style="color:blue" ng-show="addteacherform.contactnumber.$touched && addteacherform.contactnumber.$invalid">invalid contactnumber</span>
+
+						</div>
+					</div><br>
+					<div class="row">
+						<div class="col-md-4">
+							<label for="class">e-mail Id</label>
+						</div>
+						<div class="col-md-8">
+							<input type="text" class="form-control" name="emailid" placeholder="example@gmail.com*" ng-model="vm.teacher.emailid" ng-pattern="" required>
+                            <span style="color:blue" ng-show="addteacherform.emailid.$touched && addteacherform.emailid.$invalid">invalid emailid</span>
+
+						</div>
+					</div><br>
+					<div class="row">
+						<div class="col-md-4">
+							<label for="class">Qualification</label>
+						</div>
+						<div class="col-md-8">
+							<input type="text" class="form-control" name="qualification" placeholder="Ex:Ph.d,MBA,M.Tech*" ng-model="vm.teacher.qualification" ng-pattern="" required>
+                            <span style="color:blue" ng-show="addteacherform.qualification.$touched && addteacherform.qualification.$invalid">invalid classname</span>
+
+						</div>
+					</div><br>
+					<div class="row">
+						<div class="col-md-4">
+							<label for="class">TAGS</label>
+						</div>
+						<div class="col-md-8">
+							<input type="text" class="form-control" name="subjectscanteach" placeholder="subjects he/she can teach" ng-model="vm.teacher.subjects" ng-pattern="/[aA-zZ\s]$/" required>
+                            <span style="color:blue" ng-show="addteacherform.subjectscanteach.$touched && addteacherform.subjectscanteach.$invalid">invalid classname</span>
+
+						</div>
+					</div><br>
+                  </div>
+              </div>
+              <div class="col-md-6">
+              <div class="right-side-form">
+              <div class="row">
+						<div class="col-md-4">
+							<label for="class">Date Of Joining</label>
+						</div>
+						<div class="col-md-8">
+							<input type="text" class="form-control" name="dateofjoining" placeholder="DD/MM/YYYY*" ng-model="vm.teacher.dateofjoining" ng-pattern="/^([0-9]{2}[-/][0-9]{2}[-/][0-9]{4})/" required>
+                            <span style="color:blue" ng-show="addteacherform.dateofjoining.$touched && addteacherform.dateofjoining.$invalid">invalid date format</span>
+
+						</div>
+				</div><br>
+				<div class="row">
+					<div class="col-md-4">
+						<label for="class">About Teacher</label>
+					</div>
+					 <div class="col-md-8">
+                       <textarea class="form-control" rows="7" cols="50" placeholder="some text about you......*" id="message" ng-model="vm.teacher.about" required></textarea>
+                     </div>
+                </div><br>
+				<div class="row">
+					<div class="col-md-4">
+						<label for="class">Address</label>
+					</div>
+					 <div class="col-md-8">
+                       <textarea class="form-control" rows="7" cols="50" placeholder="Type Your Address Here... *" id="message" ng-model="vm.teacher.address" required></textarea>
+                     </div>
+                </div>
+	          </div>
+
+		</div><br>
+				 <div class="row">
+						<div class="col-lg-6 col-lg-offset-3 text-center">
+							<button id="btn-reset" type="reset" class="btn btn-info button"> Reset</button>
+                                  
+		                    <button id="btn-Register" type="submit" name="submit"  class="btn btn-info button" ng-click="vm.createteacher()"> 
+	                     Submit</button>
+                                 
+					</div>
+				</div>
+		</form>
+	</div>
+</div>
+					

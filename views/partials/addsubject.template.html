@@ -1,0 +1,35 @@
+<div>
+	<div class="col-lg-10">
+		<h3>Add Subjects</h3>
+	</div>
+	<div class="panel panel-info  createclasspanel col-lg-6 col-lg-offset-3" >
+		<div class="panel-heading  ">
+          <div class="panel-title"></div>
+        </div>
+        <div class="panel-body">
+        	<form name="addsubjectform" >
+        		<div class="row">
+	        		<div class="col-lg-12">
+	        			<div class="row">
+	        				<div class="col-md-4">
+	        					<label>Subject</label>
+	        				</div>
+	        				<div class="col-md-8">
+	        					<input type="text" class="form-control form-input" name="subjectname" ng-model="vm.subject.subjectname" placeholder="subject name*">
+	        				</div>
+	        			</div>
+	        		</div>
+        		</div><br>
+        		<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 text-center">
+						<button id="btn-reset" type="reset" class="btn btn-info button"> Reset</button>
+                                  
+	                    <button id="btn-Register" type="submit" name="submit" ng-click="vm.addsubject()" class="btn btn-info button"> 
+	                     Submit</button>
+                                 
+					</div>
+				</div>
+        	</form>
+        </div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<div class="schools">
+<table class="table-striped table-bordered">
+	<tr>
+		<th>
+		id
+		</th>
+		<th>
+		schoolcode
+		</th>
+
+		<th>
+		schoolname
+		</th>
+		<th>dateofestablishment</th>
+		<th>timezone</th>
+		<th>location</th>
+	</tr>
+	<tr ng-repeat="school in vm.allScholldata">
+	<td>
+	{{school.id}}
+	</td>
+	<td>
+	{{school.schoolcode}}
+	</td>
+	<td>
+	{{school.schoolname}}
+	</td>
+	<td>{{school.dateofestablishment}}</td>
+	<td>{{school.timezone}}</td>
+	<td>{{school.location}}</td>
+	</tr>
+</table>
+</div>
